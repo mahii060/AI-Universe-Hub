@@ -14,7 +14,8 @@ const showData = (data) => {
         cardsContainer.innerHTML += `
         <div class="col">
             <div class="card h-100 p-3">
-                <img src="${image}" class="card-img-top" alt="...">
+                <img src="${image ? image : "https://shorturl.at/CFNTU"}" class="card-img-top" alt="..."
+                onerror="this.src='https://shorturl.at/CFNTU'">
                 <div class="card-body">
                     <h5 class="">Features</h5>
                     <ol>
@@ -22,12 +23,13 @@ const showData = (data) => {
                         <li>${features[1]}</li>
                         <li>${features[2]}</li>
                     </ol>
-                    <h5 class="card-title">Card title</h5>
+                    <hr>
+                    <h5 class="card-title">${name}</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                         to additional content. This content is a little bit longer.</p>
                 </div>
             </div>
         </div>
-        `
-    })
-}
+        `;
+    });
+};
