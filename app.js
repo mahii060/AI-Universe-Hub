@@ -24,9 +24,15 @@ const showData = (data) => {
                         <li>${features[2]}</li>
                     </ol>
                     <hr>
-                    <h5 class="card-title">${name}</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                        to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">  
+                        <div>
+                            <h5 class="card-title">${name}</h5>
+                            <p class="card-text"><i class="fa-solid fa-calendar-days"></i> <span>${published_in}</span></p>
+                        </div>
+                        <div>
+                            <p class="text-danger"><i class="fa-solid fa-circle-arrow-right fa-2xl"></i></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
