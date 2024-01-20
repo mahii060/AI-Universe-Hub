@@ -44,6 +44,8 @@ const loadCardDetails = (id) => {
         .then(data => showCardDetails(data.data))
 }
 
-const showCardDetails = (data) => {
-    console.log(data)
+const showCardDetails = (cardDetails) => {
+    console.log(cardDetails);
+    const { accuracy, features, image_link, input_output_examples, integrations, logo, pricing, tool_name, use_cases, description } = cardDetails;
+    document.getElementById('description-title').innerText = description;
 }
