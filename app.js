@@ -85,4 +85,15 @@ const showCardDetails = (cardDetails) => {
         </div>
     </div>
     `;
+    const detailsCard = document.getElementById('details-card');
+    detailsCard.innerHTML = '';
+    detailsCard.innerHTML += `
+    <div class="card p-3 h-100">
+        <img src="${image_link ? image_link[0] : image_link[1]} class="card-img-top" alt="..." onerror="this.src='https://shorturl.at/CFNTU'">
+        <div class="card-body text-center">
+            <h5 class="card-title">${input_output_examples[1].input}</h5>
+            <p class="card-text">${input_output_examples[1].output}</p>
+        </div>
+    </div>
+    `;
 }
