@@ -1,5 +1,6 @@
 // Load partial data
 const loadData = () => {
+    document.getElementById('spinner').classList.remove('d-none')
     fetch('https://openapi.programming-hero.com/api/ai/tools')
         .then(res => res.json())
         .then(data => showData(data.data.tools.slice(0, 6)))
@@ -7,6 +8,7 @@ const loadData = () => {
 
 // Load all data
 const loadAllData = () => {
+    document.getElementById('spinner').classList.remove('d-none')
     fetch('https://openapi.programming-hero.com/api/ai/tools')
         .then(res => res.json())
         .then(data => showData(data.data.tools))
@@ -14,6 +16,7 @@ const loadAllData = () => {
 
 const showData = (data) => {
     // console.log(data)
+    document.getElementById('spinner').classList.add('d-none')
     const cardsContainer = document.getElementById('cards-container');
     cardsContainer.innerHTML = "";
     data.forEach(singleData => {

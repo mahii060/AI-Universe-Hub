@@ -21,6 +21,13 @@
             <h1>AI Universe Hub</h1>
             <button class="btn btn-danger btn-lg">Sort By Data</button>
         </section>
+        <!-- spinner section starts  -->
+        <section id="spinner" class="d-flex justify-content-center mb-3 d-none">
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden ">Loading...</span>
+            </div>
+        </section>
+        <!-- spinner section ends -->
     </header>
     <!-- header ends  -->
     <main>
@@ -31,12 +38,6 @@
             </div>
         </section>
         <!-- data showing section ends -->
-
-        <!-- show more section starts -->
-        <section class="text-center my-3">
-            <button class="btn btn-danger btn-lg" onclick="loadAllData()">Show more</button>
-        </section>
-        <!-- show more section ends -->
 
         <!-- ai details section starts -->
         <!-- Button trigger modal -->
@@ -77,6 +78,13 @@
             </div>
         </div>
         <!-- ai details section ends -->
+
+        <!-- show more section starts -->
+        <section class="text-center my-3">
+            <button class="btn btn-danger btn-lg" onclick="loadAllData()">Show more</button>
+        </section>
+        <!-- show more section ends -->
+
     </main>
     <footer>
 
