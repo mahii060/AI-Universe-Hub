@@ -47,5 +47,42 @@ const loadCardDetails = (id) => {
 const showCardDetails = (cardDetails) => {
     console.log(cardDetails);
     const { accuracy, features, image_link, input_output_examples, integrations, logo, pricing, tool_name, use_cases, description } = cardDetails;
-    document.getElementById('description-title').innerText = description;
+    // document.getElementById('description-title').innerText = description;
+    const descriptionBody = document.getElementById('description-body');
+    descriptionBody.innerHTML = '';
+    descriptionBody.innerHTML += `
+    <h5 class="card-title">${description}</h5>
+    <div class="d-flex justify-content-around gap-2 mt-3">
+        <div class="bg-body rounded text-center text-success p-2 fw-bold">
+            <p>${pricing[0].price}</p>
+            <p>${pricing[0].plan}</p>
+        </div>
+        <div class="bg-body rounded text-center text-warning p-2 fw-bold">
+        <p>${pricing[1].price}</p>
+        <p>${pricing[1].plan}</p>
+        </div>
+        <div class="bg-body rounded text-center text-danger p-2 fw-bold">
+        <p>${pricing[2].price}</p>
+        <p>${pricing[2].plan}</p>
+        </div>
+    </div>
+    <div class="d-flex mt-3">
+        <div>
+            <h5>Features</h5>
+            <ul>
+                <li class="text-secondary text-sm">${features[1].feature_name}</li>
+                <li class="text-secondary text-sm">${features[2].feature_name}</li>
+                <li class="text-secondary text-sm">${features[3].feature_name}</li>
+            </ul>
+        </div>
+        <div>
+            <h5>Integrations</h5>
+            <ul>
+                <li class="text-secondary text-sm">${integrations[0]}</li>
+                <li class="text-secondary text-sm">${integrations[1]}</li>
+                <li class="text-secondary text-sm">${integrations[2]}</li>
+            </ul>
+        </div>
+    </div>
+    `;
 }
