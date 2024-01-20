@@ -60,19 +60,19 @@ const showCardDetails = (cardDetails) => {
     const descriptionBody = document.getElementById('description-body');
     descriptionBody.innerHTML = '';
     descriptionBody.innerHTML += `
-    <h5 class="card-title">${description}</h5>
+    <h5 class="card-title">${description ? description : "Not Available"}</h5>
     <div class="d-flex justify-content-around gap-2 mt-3">
         <div class="bg-body rounded text-center text-success p-2 fw-bold">
-            <p>${pricing[0].price}</p>
-            <p>${pricing[0].plan}</p>
+            <p>${pricing ? pricing[0].price : "Not Available"}</p>
+            <p>${pricing ? pricing[0].plan : "Not Available"}</p>
         </div>
         <div class="bg-body rounded text-center text-warning p-2 fw-bold">
-        <p>${pricing[1].price}</p>
-        <p>${pricing[1].plan}</p>
+        <p>${pricing ? pricing[1].price : "Not Available"}</p>
+        <p>${pricing ? pricing[1].plan : "Not Available"}</p>
         </div>
         <div class="bg-body rounded text-center text-danger p-2 fw-bold">
-        <p>${pricing[2].price}</p>
-        <p>${pricing[2].plan}</p>
+        <p>${pricing ? pricing[2].price : "Not Available"}</p>
+        <p>${pricing ? pricing[2].plan : "Not Available"}</p>
         </div>
     </div>
     <div class="d-flex mt-3">
@@ -87,9 +87,9 @@ const showCardDetails = (cardDetails) => {
         <div>
             <h5>Integrations</h5>
             <ul>
-                <li class="text-secondary text-sm">${integrations[0] ? integrations[0] : "Not Available"}</li>
-                <li class="text-secondary text-sm">${integrations[1] ? integrations[1] : "Not Available"}</li>
-                <li class="text-secondary text-sm">${integrations[2] ? integrations[2] : "Not Available"}</li>
+                <li class="text-secondary text-sm">${integrations ? integrations[0] : "Not Available"}</li>
+                <li class="text-secondary text-sm">${integrations ? integrations[1] : "Not Available"}</li>
+                <li class="text-secondary text-sm">${integrations ? integrations[2] : "Not Available"}</li>
             </ul>
         </div>
     </div>
@@ -100,8 +100,8 @@ const showCardDetails = (cardDetails) => {
     <div class="card p-3 h-100">
         <img src="${image_link ? image_link[0] : image_link[1]} class="card-img-top" alt="..." onerror="this.src='https://shorturl.at/CFNTU'">
         <div class="card-body text-center">
-            <h5 class="card-title">${input_output_examples[1].input}</h5>
-            <p class="card-text">${input_output_examples[1].output}</p>
+            <h5 class="card-title">${input_output_examples ? input_output_examples[1].input : "Not Available"}</h5>
+            <p class="card-text">${input_output_examples ? input_output_examples[1].output : "Not Available"}</p>
         </div>
     </div>
     `;
