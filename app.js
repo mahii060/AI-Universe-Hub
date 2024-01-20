@@ -99,6 +99,7 @@ const showCardDetails = (cardDetails) => {
     detailsCard.innerHTML += `
     <div class="card p-3 h-100">
         <img src="${image_link ? image_link[0] : image_link[1]} class="card-img-top" alt="..." onerror="this.src='https://shorturl.at/CFNTU'">
+        <span class="badge text-bg-danger position-absolute top-0 end-0">${accuracy.score ? "90% Accuracy" : ""}</span>
         <div class="card-body text-center">
             <h5 class="card-title">${input_output_examples ? input_output_examples[1].input : "Not Available"}</h5>
             <p class="card-text">${input_output_examples ? input_output_examples[1].output : "Not Available"}</p>
