@@ -1,8 +1,17 @@
+// Load partial data
 const loadData = () => {
     fetch('https://openapi.programming-hero.com/api/ai/tools')
         .then(res => res.json())
         .then(data => showData(data.data.tools.slice(0, 6)))
 }
+
+// Load all data
+const loadAllData = () => {
+    fetch('https://openapi.programming-hero.com/api/ai/tools')
+        .then(res => res.json())
+        .then(data => showData(data.data.tools))
+}
+
 const showData = (data) => {
     // console.log(data)
     const cardsContainer = document.getElementById('cards-container');
@@ -78,9 +87,9 @@ const showCardDetails = (cardDetails) => {
         <div>
             <h5>Integrations</h5>
             <ul>
-                <li class="text-secondary text-sm">${integrations[0]}</li>
-                <li class="text-secondary text-sm">${integrations[1]}</li>
-                <li class="text-secondary text-sm">${integrations[2]}</li>
+                <li class="text-secondary text-sm">${integrations[0] ? integrations[0] : "Not Available"}</li>
+                <li class="text-secondary text-sm">${integrations[1] ? integrations[1] : "Not Available"}</li>
+                <li class="text-secondary text-sm">${integrations[2] ? integrations[2] : "Not Available"}</li>
             </ul>
         </div>
     </div>
