@@ -14,14 +14,16 @@ const loadAllData = () => {
         .then(data => showData(data.data.tools))
 }
 
+// Show data 
 const showData = (data) => {
-    // console.log(data)
     document.getElementById('spinner').classList.add('d-none')
+
     const cardsContainer = document.getElementById('cards-container');
     cardsContainer.innerHTML = "";
+
+    // Showing single data 
     data.forEach(singleData => {
         const { description, features, id, links, name, published_in, image } = singleData;
-        // console.log(singleData)
         cardsContainer.innerHTML += `
         <div class="col">
             <div class="card h-100 p-3">
@@ -50,18 +52,21 @@ const showData = (data) => {
         `;
     });
 };
+
+// Load card Details
 const loadCardDetails = (id) => {
     fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
         .then(res => res.json())
         .then(data => showCardDetails(data.data))
 }
 
+// Show card Details
 const showCardDetails = (cardDetails) => {
-    console.log(cardDetails);
     const { accuracy, features, image_link, input_output_examples, integrations, logo, pricing, tool_name, use_cases, description } = cardDetails;
-    // document.getElementById('description-title').innerText = description;
+
     const descriptionBody = document.getElementById('description-body');
     descriptionBody.innerHTML = '';
+
     descriptionBody.innerHTML += `
     <h5 class="card-title">${description ? description : "Not Available"}</h5>
     <div class="d-flex justify-content-around gap-2 mt-3">
@@ -97,8 +102,10 @@ const showCardDetails = (cardDetails) => {
         </div>
     </div>
     `;
+
     const detailsCard = document.getElementById('details-card');
     detailsCard.innerHTML = '';
+
     detailsCard.innerHTML += `
     <div class="card p-3 h-100">
         <img src="${image_link ? image_link[0] : image_link[1]} class="card-img-top" alt="..." onerror="this.src='https://shorturl.at/CFNTU'">
@@ -109,4 +116,4 @@ const showCardDetails = (cardDetails) => {
         </div>
     </div>
     `;
-}
+};
